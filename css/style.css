@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+:root{
+    --yellow: #fcdd26;
+    --white: #fff;
+    --grey: #333;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    border: none; outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+*::selection{
+    background: var(--yellow);
+    color: var(--grey);
+}
+
+section{
+    padding: 2rem 5%;
+}
+
+html::-webkit-scrollbar{
+    width: 1.2rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: var(--grey);
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--yellow);
+    border-radius: .5rem;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.btn{
+    background: var(--yellow);
+    font-size: 1.2rem;
+    color: var(--grey);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    box-shadow: 0  0 1rem rgba(0, 0, 0, .3);
+    text-align: center;
+    display: inline-block;
+}
+
+.btn:hover{
+    background: var(--grey);
+    color: var(--yellow);
+}
+
+
+.heading{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--grey);
+    padding: 2rem 0;
+}
+
+.heading i{
+    font-size: 2.2rem;
+    color: var(--yellow);
+}
+/* ......... Header ...... */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 999;
+    background: var(--white);
+}
+
+header #menu-bar{
+    font-size: 1.8rem;
+    color: var(--yellow);
+    border: .1rem solid var(--yellow);
+    border-radius: .5rem;
+    padding: .1rem .4rem;
+    display: none;
+}
+
+header #menu-bar:hover{
+    color: var(--grey);
+    border-color: var(--grey);
+    cursor: pointer;
+}
+
+header .logo{
+    font-size: 2rem;
+    color: var(--grey);
+    font-weight: bold;
+}
+
+header .logo i{
+    font-size: 2.3rem;
+    color: var(--yellow);
+    transform: rotate(-65deg);
+}
+
+header .logo i:hover{
+    color: var(--grey);
+}
+
+header .navbar a{
+    font-size: 1.6rem;
+    color: var(--grey);
+    margin-right: 1.5rem;
+}
+
+header .navbar a:hover{
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+header .icons i{
+    font-size: 1.5rem;
+    color: var(--grey);
+    margin-left: .5rem;
+}
+
+header .icons i:hover{
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+header .search-bar{
+    position: absolute;
+    top: 100%; left: 0; width: 100%;
+    background: var(--yellow);
+    display: flex;
+    align-items: center;
+    /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
+    transform: scale(0);
+}
+
+header .search-bar.active{
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+    transform: scale(1);
+}
+
+header .search-bar input{
+    width: 100%;
+    margin: .7rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: 1.3rem;
+    color: var(--grey);
+    text-transform: none;
+    margin-right: .5rem;
+}
+
+header .search-bar input::placeholder{
+    text-transform: capitalize;
+}
+
+header .search-bar label{
+    font-size: 1.5rem;
+    color: var(--grey);
+    cursor: pointer;
+    margin-right: .5rem;
+}
+
+/* .......... Home ........... */
+
+.home{
+    margin-top: 9rem;
+    height: 80vh;
+    background: url(../images/home-bg.webp) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.home .content{
+    padding-left: 3rem;
+} 
+
+.home .content p{
+    font-size: 2rem;
+    color: var(--grey);
+}
+
+.home .content h1{
+    font-size: 5rem;
+    color: var(--grey);
+}
+
+.home .content .btn{
+    background: var(--white);
+    margin-left: 1.5rem;
+}
+
+.home .content .btn:hover{
+    background: var(--grey);
+}
+
+/* ............ Category ........... */
+
+.category .inner{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category .inner .box{
+    width: 23%;
+    text-align: center;
+}
+
+.category .inner .box img{
+    width: 100%;
+}
+
+.category .inner .box h3{
+    font-size: 1.5rem;
+    color: var(--grey);
+    margin-bottom: .5rem;
+}
+
+/* .............. Featured ......... */
+
+.featured .inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.featured .inner .box{
+    width: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured .inner .box:hover{
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+}
+
+.featured .inner .box .price{
+    position: absolute;
+    top: 2rem; right: 2rem;
+    width: 6rem;
+    height: 6rem;
+    background: var(--yellow);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 6rem;
+    font-size: 1.5rem;
+    color: var(--grey);
+}
+
+.featured .inner .box img{
+    width: 40%;
+    height: 40%;
+}
+
+.featured .inner .box .content .stars i{
+    font-size: 1.3rem;
+    color: var(--yellow);
+    margin-bottom: .5rem;
+}
+
+.featured .inner .box .content h3{
+    font-size: 1.7rem;
+    color: var(--grey);
+    margin-bottom: .5rem;
+} 
+
+.featured .inner .box .content p{
+    font-size: 1.3rem;
+    color: var(--grey);
+    margin-bottom: .5rem;
+}
+
+
+/* ............. Deal ........... */
+
+.deal{
+    background: url(../images/deal-bg.webp) center no-repeat;
+    background-size: cover;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.deal .content span{
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.deal .content h3{
+    font-size: 3rem;
+    color: var(--grey);
+    margin: .3rem 0;
+}
+
+
+/* ............ Products ......... */
+
+.products .inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.products .inner .box{
+    width: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+}
+
+.products .inner .box:hover{
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+}
+
+.products .inner .box img{
+    width: 45%;
+}
+
+.products .inner .box .content .stars i{
+    font-size: 1rem;
+    color: var(--yellow);
+}
+
+.products .inner .box .content h4{
+    font-size: 1.3rem;
+    color: var(--grey);
+}
+
+.products .inner .box .content .price{
+    font-size: 1.2rem;
+    color: var(--grey);
+    margin: .2rem 0;
+}
+
+.products .inner .box .content .price span{
+    font-size: 1rem;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.products .inner .box .content .btn{
+    font-size: 1rem;
+    padding: .5rem;
+    margin-bottom: .2rem;
+}
+
+/* ................ Offer ......... */
+
+.offer .inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer .inner .box{
+    width: 49%;
+    position: relative;
+}
+
+.offer .inner .box img{
+    width: 100%;
+}
+
+.offer .inner .box .content{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.offer .inner .box .content span{
+    font-size: 1.5rem;
+    color: var(--grey);
+}
+
+.offer .inner .box .content h4{
+    font-size: 2rem;
+    color: var(--grey);
+    margin-bottom: .3rem;
+}
+
+.offer .inner .box .content .btn{
+    background: var(--white);
+}
+
+.offer .inner .box .content .btn:hover{
+    background: var(--grey);
+}
+
+/* ............. Contact ........... */
+
+.contact{
+    background: url(../images/contact-bg.webp) center no-repeat;
+    background-size: cover;
+    height: 80vh;
+    margin-top: 3rem;
+}
+
+.contact .heading i{
+    color: var(--white);
+}
+
+.contact form{
+    text-align: center;
+}
+
+.contact form .inputbox{
+    display: flex;
+    justify-content: center;
+}
+
+.contact form .inputbox input{
+    width: 49%;
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    text-transform: none;
+    color: var(--grey);
+    font-size: 1.2rem;
+}
+
+.contact form .inputbox input::placeholder{
+    text-transform: capitalize;
+}
+
+.contact form textarea{
+    width: 99%;
+    height: 13rem;
+    border-radius: .5rem;
+    padding: .5rem;
+    margin: .5rem;
+    color: var(--grey);
+    font-size: 1.2rem;
+    text-transform: none;
+    resize: none;
+}
+
+
+.contact form .btn{
+    background: var(--white);
+    cursor: pointer;
+}
+
+.contact form .btn:hover{
+    background: var(--grey);
+}
+
+/* .............. Footer ............. */
+
+footer{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+footer .social a{
+    color: var(--white);
+    margin-left: .5rem;
+}
+
+footer .social a i{
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background: #666;
+    width: 2.2rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+}
+
+footer .created{
+    font-size: 1.3rem;
+    color: var(--grey);
+    margin-top: 1rem;
+}
+
+footer .created span{
+    color: var(--yellow);
+}
+
+footer .created span:hover{
+    text-decoration: underline;
+    color: var(--grey);
+    cursor: pointer;
+}
+
+@media(max-width: 1200px){
+    header .navbar a{
+        font-size: 1.3rem;
+    }
+
+    section{
+        padding: 1rem 2%;
+    }
+
+    .featured .inner .box .price{
+        width: 4rem;
+        height: 4rem;
+        line-height: 4rem;
+        font-size: 1rem;
+        top: 1.5rem; right: 1.5rem;
+    }
+
+    .products .inner .box{
+        width: 49%;
+    }
+
+    .offer .inner .box .content{
+        top: 30%;
+    }
+}
+
+@media(max-width: 976px){
+    header #menu-bar{
+        display: initial;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--yellow);
+        transform: scale(0);
+    }
+
+    header .navbar.active{
+        transform: scale(1);
+    }
+
+    header .navbar a{
+        display: block;
+        background: var(--white);
+        margin: .5rem;
+        padding: .5rem;
+        border-radius: .5rem;
+    }
+
+    .home{
+        height: 60vh;
+    }
+
+    .home .content h1{
+        font-size: 3rem;
+    }
+
+    .category .inner .box{
+        width: 49%;
+    }
+
+    .featured .inner .box{
+        width: 80%;
+    }
+
+    .deal{
+        height: 60vh;
+    }
+
+    .offer .inner .box .content h4{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media(max-width: 767px){
+
+    .home .content p{
+        font-size: 1.5rem;
+    }
+
+    .deal{
+        height: 45vh;
+    }
+
+    .deal .content h3{
+        font-size: 2.5rem;
+    }
+
+    .products .inner .box{
+        width: 48%;
+    }
+
+    .offer .inner .box .content h4{
+        font-size: 1.3rem;
+    }
+}
